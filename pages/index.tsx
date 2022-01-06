@@ -8,14 +8,14 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>rekki interview</title>
-        <meta name="description" content="Rekki interview app" />
+        <title>demo</title>
+        <meta name="description" content="demo" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          rekki interview
+          demo
         </h1>
 
         <ul>
