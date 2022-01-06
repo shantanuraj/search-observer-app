@@ -1,34 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## search-observer-app
 
-## Getting Started
+I implemented the specification for the test app here, used Next.js for rolling a React app with zero config.
 
-First, run the development server:
+## Search
+- For the search part of the app I used my podcast search API to get a list of podcasts for the search term.
+- The endpoint is https://data.podcst.io/search, it accepts a query parameter `term` and returns a list of podcasts.
+- The podcasts are then displayed in the search results.
+- SWR is utilized to fetch and cache the data.
+- It also allows us to the Suspense pattern for loading and error states, but I didn't get around to use it.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Observer
+- For the observer/reducer I first wrote the type signatures for the state, reducer, dispatcher and the store.
+- I then implemented a mini-redux like store and a React hook to utilize store states in components.
+- It took me slightly longer than 10 minutes with the observer app not for the implementation itself but to come up with a way to showcase the observer in the UI.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> General notes: This is not my preferred way of organizing code but I was keeping the time-constraint in mind and being a bit fast and loose with it.
+> A production app would follow a more structured approach and have much better accessibility.
