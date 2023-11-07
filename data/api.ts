@@ -1,6 +1,6 @@
 import { IPodcastSearchResult } from "../types";
 
-const API_URL = "https://data.podcst.io";
+const API_URL = "https://data.podcst.app";
 
 export const Api = {
   request: <T>(url: URL): Promise<T | Error> =>
